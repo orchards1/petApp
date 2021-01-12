@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17511" systemVersion="20C69" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Pets" representedClassName="Pets" syncable="YES" codeGenerationType="class">
+        <attribute name="petAddress" optional="YES" attributeType="String"/>
+        <attribute name="petBornName" optional="YES" attributeType="String"/>
+        <attribute name="petBreed" optional="YES" attributeType="String"/>
+        <attribute name="petBreeder" optional="YES" attributeType="String"/>
+        <attribute name="petColor" optional="YES" attributeType="String"/>
+        <attribute name="petDOB" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="petID" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="petImage" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES"/>
+        <attribute name="petName" optional="YES" attributeType="String"/>
+        <attribute name="petRegistrationID" optional="YES" attributeType="String"/>
+        <attribute name="petSex" optional="YES" attributeType="String"/>
+        <attribute name="petType" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="Vaccines" representedClassName="Vaccines" syncable="YES" codeGenerationType="class"/>
+    <elements>
+        <element name="Pets" positionX="-288.3947143554688" positionY="-161.0355834960938" width="128" height="209"/>
+        <element name="Vaccines" positionX="-285.5032958984375" positionY="19.48236083984375" width="128" height="29"/>
+    </elements>
+</model>
