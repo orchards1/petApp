@@ -1,6 +1,42 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17511" systemVersion="20C69" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="Pets" representedClassName="Pets" syncable="YES" codeGenerationType="class">
+    <entity name="Activities" representedClassName="Activities" syncable="YES" codeGenerationType="class">
+        <attribute name="category" optional="YES" attributeType="String"/>
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="doctor" optional="YES" attributeType="String"/>
+        <attribute name="location" optional="YES" attributeType="String"/>
+        <attribute name="title" optional="YES" attributeType="String"/>
+        <relationship name="ofPets" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Pets" inverseName="activities" inverseEntity="Pets"/>
+    </entity>
+    <entity name="GeneralRecords" representedClassName="GeneralRecords" syncable="YES" codeGenerationType="class">
+        <attribute name="condition" optional="YES" attributeType="String"/>
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="doctor" optional="YES" attributeType="String"/>
+        <attribute name="notes" optional="YES" attributeType="String"/>
+        <attribute name="temperature" optional="YES" attributeType="String"/>
+        <attribute name="vet" optional="YES" attributeType="String"/>
+        <attribute name="weight" optional="YES" attributeType="String"/>
+        <relationship name="ofPets" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Pets" inverseName="generalRecord" inverseEntity="Pets"/>
+    </entity>
+    <entity name="MedicalRecords" representedClassName=".MedicalRecords" syncable="YES" codeGenerationType="class">
+        <attribute name="bodypart" optional="YES" attributeType="String"/>
+        <attribute name="condition" optional="YES" attributeType="String"/>
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="doctor" optional="YES" attributeType="String"/>
+        <attribute name="nextdate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="notes" optional="YES" attributeType="String"/>
+        <attribute name="vet" optional="YES" attributeType="String"/>
+        <relationship name="ofPets" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Pets" inverseName="medicalRecord" inverseEntity="Pets"/>
+    </entity>
+    <entity name="OtherRecords" representedClassName="OtherRecords" syncable="YES" codeGenerationType="class">
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="location" optional="YES" attributeType="String"/>
+        <attribute name="nextvisit" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="notes" optional="YES" attributeType="String"/>
+        <attribute name="title" optional="YES" attributeType="String"/>
+        <relationship name="ofPets" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Pets" inverseName="otherRecord" inverseEntity="Pets"/>
+    </entity>
+    <entity name="Pets" representedClassName=".Pets" syncable="YES" codeGenerationType="class">
         <attribute name="petAddress" optional="YES" attributeType="String"/>
         <attribute name="petBornName" optional="YES" attributeType="String"/>
         <attribute name="petBreed" optional="YES" attributeType="String"/>
@@ -13,10 +49,28 @@
         <attribute name="petRegistrationID" optional="YES" attributeType="String"/>
         <attribute name="petSex" optional="YES" attributeType="String"/>
         <attribute name="petType" optional="YES" attributeType="String"/>
+        <relationship name="activities" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Activities" inverseName="ofPets" inverseEntity="Activities"/>
+        <relationship name="generalRecord" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="GeneralRecords" inverseName="ofPets" inverseEntity="GeneralRecords"/>
+        <relationship name="medicalRecord" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="MedicalRecords" inverseName="ofPets" inverseEntity="MedicalRecords"/>
+        <relationship name="otherRecord" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="OtherRecords" inverseName="ofPets" inverseEntity="OtherRecords"/>
+        <relationship name="vaccineRecord" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="VaccineRecords" inverseName="ofPets" inverseEntity="VaccineRecords"/>
     </entity>
-    <entity name="Vaccines" representedClassName="Vaccines" syncable="YES" codeGenerationType="class"/>
+    <entity name="VaccineRecords" representedClassName="VaccineRecords" syncable="YES" codeGenerationType="class">
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="doctor" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="nextvisit" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="notes" optional="YES" attributeType="String"/>
+        <attribute name="type" optional="YES" attributeType="Transformable"/>
+        <attribute name="vet" optional="YES" attributeType="String"/>
+        <relationship name="ofPets" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Pets" inverseName="vaccineRecord" inverseEntity="Pets"/>
+    </entity>
     <elements>
-        <element name="Pets" positionX="-288.3947143554688" positionY="-161.0355834960938" width="128" height="209"/>
-        <element name="Vaccines" positionX="-285.5032958984375" positionY="19.48236083984375" width="128" height="29"/>
+        <element name="Activities" positionX="-117" positionY="72" width="128" height="119"/>
+        <element name="GeneralRecords" positionX="-4.4725341796875" positionY="-87.8280029296875" width="128" height="163"/>
+        <element name="MedicalRecords" positionX="-288" positionY="-72" width="128" height="149"/>
+        <element name="OtherRecords" positionX="46.2369384765625" positionY="111.4167327880859" width="128" height="119"/>
+        <element name="Pets" positionX="-123.805419921875" positionY="66.3017578125" width="128" height="284"/>
+        <element name="VaccineRecords" positionX="-283.6467895507812" positionY="148.1000366210938" width="128" height="149"/>
     </elements>
 </model>

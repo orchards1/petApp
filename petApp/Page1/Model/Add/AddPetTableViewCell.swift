@@ -10,7 +10,6 @@ import UIKit
 class AddPetTableViewCell: UITableViewCell {
 
     @IBOutlet weak var valueLabel: UITextField!
-    @IBOutlet weak var leftLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

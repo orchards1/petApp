@@ -8,14 +8,18 @@
 import UIKit
 import CoreData
 
-class AddPetViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class AddPetViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate ,HalfModalPresentable{
     
     
     @IBOutlet weak var collectionView: UICollectionView!
-    @IBOutlet weak var tableView: UITableView!
+   
+    @IBOutlet var tableView1: UITableView!
     
+    @IBOutlet var tableView2: UITableView!
     @IBOutlet weak var tableViewHeightConstraint: NSLayoutConstraint!
-    var sections = [[String]]()
+    @IBOutlet var tableViewHeightConstraint2: NSLayoutConstraint!
+    let section1 = ["Name","Animal","Sex" , "Date of birth" , "Breed" , "Color"]
+    let section2 = ["ID No.", "Born name" , "Breeder", "Address"]
     var animalPickerData: [String] = [String]()
     var sexPickerData: [String] = [String]()
     var animalPicker: UIPickerView!
@@ -28,29 +32,34 @@ class AddPetViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     var isTypeEmpty = false
     var isSexEmpty = false
     var isColorEmpty = false
-    
+    var isReplacing = false
+    var selectedPhotoIndex = 0
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        if let pickedImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
-            
-            //            let index = IndexPath(row: currPic, section: 0)
-            //            let cellImage: AddImageCollectionViewCell = self.collectionView.cellForItem(at: index) as! AddImageCollectionViewCell
-            //
+        if(isReplacing == false)
+        {
+        if let pickedImage = info[.editedImage] as? UIImage {
             images.append(pickedImage)
             displayImage()
+           }
         }
-        //
+        else
+        {
+            if let pickedImage = info[.editedImage] as? UIImage {
+                images[selectedPhotoIndex] = pickedImage
+                displayImage()
+               }
+        }
         
-        self.dismiss(animated: true, completion: nil)
+        picker.dismiss(animated: true, completion: nil)
     }
     func displayImage()
     {
-        
         for i in 0...5
         {
             let index = IndexPath(row: i, section: 0)
             let cellImage: AddImageCollectionViewCell = self.collectionView.cellForItem(at: index) as! AddImageCollectionViewCell
-            cellImage.deleteButton.isHidden = true
             cellImage.addButton.isHidden = false
+            cellImage.addButton.setImage(#imageLiteral(resourceName: "􀅼 (1)"), for: .normal)
             cellImage.imageView.image = nil
         }
         if(images.count != 0)
@@ -62,48 +71,130 @@ class AddPetViewController: UIViewController, UIPickerViewDelegate, UIPickerView
             
             cellImage.imageView.image = images[i]
             cellImage.imageView.contentMode = .scaleAspectFit
-            cellImage.addButton.isHidden = true
-            cellImage.deleteButton.isHidden = false
+            cellImage.addButton.setImage(nil, for: .normal)
+            
         }
         }
         
     }
     override func viewDidLoad() {
+        self.hideKeyboardWhenTappedAround()
+        imagePicker.delegate = self
         super.viewDidLoad()
         images.removeAll()
         setupTableView()
         setUpPicker()
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
-        tableView.dataSource = self
-        tableView.delegate = self
-        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+            NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cell")
-        NotificationCenter.default.addObserver(self, selector: #selector(addPhoto), name: NSNotification.Name(rawValue: "addPhoto"), object: nil)
+        
         // Do any additional setup after loading the view.
+    }
+    
+    @objc func keyboardWillShow(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.view.frame.origin.y == 0 {
+                self.view.frame.origin.y -= keyboardSize.height
+            }
+        }
+    }
+
+    @objc func keyboardWillHide(notification: NSNotification) {
+        if self.view.frame.origin.y != 0 {
+            self.view.frame.origin.y = 0
+        }
     }
     @objc func delPhoto(sender : UIButton){
         images.remove(at: sender.tag)
         displayImage()
     }
     
-    @objc func addPhoto()
+    @objc func addPhoto(sender : UIButton)
     {
-        if UIImagePickerController.isSourceTypeAvailable(.savedPhotosAlbum){
-            
-            imagePicker.delegate = self
-            imagePicker.sourceType = .savedPhotosAlbum
-            imagePicker.allowsEditing = true
-            
-            present(imagePicker, animated: true, completion: nil)
+        
+        if(images.count == 0)
+        {
+            self.isReplacing = false
+            let alert = UIAlertController(title: "Choose Image", message: nil, preferredStyle: .actionSheet)
+                alert.addAction(UIAlertAction(title: "Camera", style: .default, handler: { _ in
+                    self.openCamera()
+                }))
+
+                alert.addAction(UIAlertAction(title: "Gallery", style: .default, handler: { _ in
+                    self.openGallery()
+                }))
+
+            alert.addAction(UIAlertAction.init(title: "Cancel", style: .destructive, handler: nil))
+
+                self.present(alert, animated: true, completion: nil)
+        }
+        else if(sender.tag > images.count - 1)
+        {
+            self.isReplacing = false
+            let alert = UIAlertController(title: "Choose Image", message: nil, preferredStyle: .actionSheet)
+                    alert.addAction(UIAlertAction(title: "Camera", style: .default, handler: { _ in
+                        self.openCamera()
+                    }))
+
+                    alert.addAction(UIAlertAction(title: "Gallery", style: .default, handler: { _ in
+                        self.openGallery()
+                    }))
+
+            alert.addAction(UIAlertAction.init(title: "Cancel", style: .destructive, handler: nil))
+
+                    self.present(alert, animated: true, completion: nil)
+        }
+        else
+        {
+            selectedPhotoIndex = sender.tag
+            let alert = UIAlertController(title: "Change Image", message: nil, preferredStyle: .actionSheet)
+                    alert.addAction(UIAlertAction(title: "Camera", style: .default, handler: { _ in
+                        self.isReplacing = true
+                        self.openCamera()
+                    }))
+
+                    alert.addAction(UIAlertAction(title: "Gallery", style: .default, handler: { _ in
+                        self.isReplacing = true
+                        
+                        self.openGallery()
+                    }))
+            alert.addAction(UIAlertAction(title: "Remove", style: .default, handler: { _ in
+                self.delPhoto(sender: sender)
+            }))
+
+            alert.addAction(UIAlertAction.init(title: "Cancel", style: .destructive, handler: nil))
+
+                    self.present(alert, animated: true, completion: nil)
         }
     }
     
     @objc func cancelPicker(){
         self.view.endEditing(true)
     }
-    
+    func openCamera()
+    {
+        if(UIImagePickerController .isSourceTypeAvailable(UIImagePickerController.SourceType.camera))
+        {
+            imagePicker.sourceType = UIImagePickerController.SourceType.camera
+            imagePicker.allowsEditing = true
+            self.present(imagePicker, animated: true, completion: nil)
+        }
+        else
+        {
+            let alert  = UIAlertController(title: "Warning", message: "You don't have camera", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
+    }
+
+    func openGallery()
+    {
+        imagePicker.sourceType = UIImagePickerController.SourceType.photoLibrary
+        imagePicker.allowsEditing = true
+        self.present(imagePicker, animated: true, completion: nil)
+    }
     
     func setUpPicker()
     {
@@ -150,15 +241,15 @@ class AddPetViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         
         if(pickerView == animalPicker)
         {
-            let index2 = IndexPath(row: 1, section: 0)
-            let type: AddPetTableViewCell = self.tableView.cellForRow(at: index2) as! AddPetTableViewCell
+            let index2 = IndexPath(row: 0, section: 1)
+            let type: AddPetTableViewCell = self.tableView1.cellForRow(at: index2) as! AddPetTableViewCell
             type.valueLabel.text = animalPickerData[row]
             
         }
         else
         {
-            let index2b = IndexPath(row: 2, section: 0)
-            let sex: AddPetTableViewCell = self.tableView.cellForRow(at: index2b) as! AddPetTableViewCell
+            let index2b = IndexPath(row: 0, section: 2)
+            let sex: AddPetTableViewCell = self.tableView1.cellForRow(at: index2b) as! AddPetTableViewCell
             sex.valueLabel.text = sexPickerData[row]
             sex.valueLabel.placeholder = "Choose"
         }
@@ -175,18 +266,15 @@ class AddPetViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         formatter.dateFormat = "dd/MM/yyyy"
         let timeformatter = DateFormatter()
         timeformatter.dateFormat = "HH:mm"
-        let index3 = IndexPath(row: 0, section: 1)
-        let date: AddPetTableViewCell = self.tableView.cellForRow(at: index3) as! AddPetTableViewCell
+        let index3 = IndexPath(row: 0, section: 3)
+        let date: AddPetTableViewCell = self.tableView1.cellForRow(at: index3) as! AddPetTableViewCell
         print(datePicker.date)
         date.valueLabel.text = formatter.string(from: datePicker.date)
-        
-        let index4 = IndexPath(row: 1, section: 1)
-        let age: AddPetTableViewCell = self.tableView.cellForRow(at: index4) as! AddPetTableViewCell
-        
-        age.valueLabel.text = calcAge(birthdate: datePicker.date)
+ 
         self.view.endEditing(true)
         
     }
+    
     func calcAge(birthdate: Date) -> String {
         let calendar: NSCalendar! = NSCalendar(calendarIdentifier: .gregorian)
         let now = Date()
@@ -218,13 +306,15 @@ class AddPetViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     
     
     func setupTableView()
-    {   let section1 = ["Name","Animal","Sex"]
-        let section2 = ["Date of birth" , "Age" , "Breed" , "Color"]
-        let section3 = ["ID No.", "Born name" , "Breeder", "Address"]
+    {
         
-        sections.append(section1)
-        sections.append(section2)
-        sections.append(section3)
+        tableView1.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        tableView1.dataSource = self
+        tableView1.delegate = self
+        
+        tableView2.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        tableView2.dataSource = self
+        tableView2.delegate = self
     }
     
     func save(name: String,bornName: String, type: String ,date: Date, breeder: String, sex: String, color: String, breed: String, regisId: String, address: String) {
@@ -310,38 +400,36 @@ class AddPetViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     
     @IBAction func saveButtonDidTapped(_ sender: Any) {
         
-        var success = false
-        
         let index1 = IndexPath(row: 0, section: 0)
-        let name: AddPetTableViewCell = self.tableView.cellForRow(at: index1) as! AddPetTableViewCell
+        let name: AddPetTableViewCell = self.tableView1.cellForRow(at: index1) as! AddPetTableViewCell
         
-        let index2 = IndexPath(row: 1, section: 0)
-        let type: AddPetTableViewCell = self.tableView.cellForRow(at: index2) as! AddPetTableViewCell
+        let index2 = IndexPath(row: 0, section: 1)
+        let type: AddPetTableViewCell = self.tableView1.cellForRow(at: index2) as! AddPetTableViewCell
         
-        let index2b = IndexPath(row:2 ,section: 0)
-        let sex: AddPetTableViewCell = self.tableView.cellForRow(at: index2b) as! AddPetTableViewCell
+        let index2b = IndexPath(row:0 ,section: 2)
+        let sex: AddPetTableViewCell = self.tableView1.cellForRow(at: index2b) as! AddPetTableViewCell
         
-        let index3 = IndexPath(row: 0, section: 1)
-        let date: AddPetTableViewCell = self.tableView.cellForRow(at: index3) as! AddPetTableViewCell
+        let index3 = IndexPath(row: 0, section: 3)
+        let date: AddPetTableViewCell = self.tableView1.cellForRow(at: index3) as! AddPetTableViewCell
         
-        let index4 = IndexPath(row: 2, section: 1)
-        let breed: AddPetTableViewCell = self.tableView.cellForRow(at: index4) as! AddPetTableViewCell
+        let index4 = IndexPath(row: 0, section: 4)
+        let breed: AddPetTableViewCell = self.tableView1.cellForRow(at: index4) as! AddPetTableViewCell
         
-        let index5 = IndexPath(row: 3, section: 1)
-        let color: AddPetTableViewCell = self.tableView.cellForRow(at: index5) as! AddPetTableViewCell
+        let index5 = IndexPath(row: 0, section: 5)
+        let color: AddPetTableViewCell = self.tableView1.cellForRow(at: index5) as! AddPetTableViewCell
         
-        let index6 = IndexPath(row: 0, section: 2)
-        let regisId: AddPetTableViewCell = self.tableView.cellForRow(at: index6) as! AddPetTableViewCell
-        
-        let index7 = IndexPath(row: 1, section: 2)
-        let bornName: AddPetTableViewCell = self.tableView.cellForRow(at: index7) as! AddPetTableViewCell
-        
-        let index8 = IndexPath(row: 2, section: 2)
-        let breeder: AddPetTableViewCell = self.tableView.cellForRow(at: index8) as! AddPetTableViewCell
-        
-        let index9 = IndexPath(row: 3, section: 2)
-        let address: AddPetTableViewCell = self.tableView.cellForRow(at: index9) as! AddPetTableViewCell
-        
+        let index6 = IndexPath(row: 0, section: 0)
+        let regisId: AddPetTableViewCell = self.tableView2.cellForRow(at: index6) as! AddPetTableViewCell
+
+        let index7 = IndexPath(row: 0, section: 1)
+        let bornName: AddPetTableViewCell = self.tableView2.cellForRow(at: index7) as! AddPetTableViewCell
+
+        let index8 = IndexPath(row: 0, section: 2)
+        let breeder: AddPetTableViewCell = self.tableView2.cellForRow(at: index8) as! AddPetTableViewCell
+
+        let index9 = IndexPath(row: 0, section: 3)
+        let address: AddPetTableViewCell = self.tableView2.cellForRow(at: index9) as! AddPetTableViewCell
+
         //Validation
         if(name.valueLabel.text == "")
         {
@@ -453,13 +541,12 @@ extension AddPetViewController: UICollectionViewDelegate,UICollectionViewDataSou
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell : AddImageCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "addimagecell", for: indexPath) as! AddImageCollectionViewCell
-        cell.deleteButton.isHidden = true
         
-        cell.deleteButton.tag = indexPath.row
-        cell.deleteButton.addTarget(self,
-                                    action: #selector(self.delPhoto(sender: )),
+        cell.addButton.tag = indexPath.row
+        cell.addButton.addTarget(self,
+                                    action: #selector(self.addPhoto(sender:)),
                                     for: .touchUpInside)
-        tableViewHeightConstraint.constant = tableView.contentSize.height
+    
         return cell
     }
     
@@ -468,85 +555,115 @@ extension AddPetViewController: UICollectionViewDelegate,UICollectionViewDataSou
 extension AddPetViewController: UITableViewDelegate,UITableViewDataSource
 {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return sections[section].count
+       
+         return 1
+        
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        let toolbar = UIToolbar();
-        toolbar.sizeToFit()
-        let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(donePicker));
-        let datedoneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(datedonePicker));
-        let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
-        let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(cancelPicker));
-        
-        
-        let section = indexPath.section
-        let cell : AddPetTableViewCell = tableView.dequeueReusableCell(withIdentifier: "addcell", for: indexPath) as! AddPetTableViewCell
-        cell.leftLabel.text = sections[section][indexPath.row]
-        if(indexPath == IndexPath(row: 1, section: 0)) //Pick animal
+        if(tableView == tableView1)
         {
-            toolbar.setItems([cancelButton,spaceButton,doneButton], animated: false)
-            cell.accessoryType = .disclosureIndicator
-            cell.valueLabel.tintColor = .clear
-            cell.valueLabel.inputView = animalPicker
-            cell.valueLabel.inputAccessoryView = toolbar
-            cell.valueLabel.placeholder = "Choose"
-        }
-        else if(indexPath == IndexPath(row: 2, section: 0)) //Pick sex
-        {
-            toolbar.setItems([cancelButton,spaceButton,doneButton], animated: false)
-            cell.accessoryType = .disclosureIndicator
-            cell.valueLabel.tintColor = .clear
-            cell.valueLabel.inputView = sexPicker
-            cell.valueLabel.inputAccessoryView = toolbar
-            cell.valueLabel.placeholder = "Choose"
+            let toolbar = UIToolbar();
+            toolbar.sizeToFit()
+            let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(donePicker));
+            let datedoneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(datedonePicker));
+            let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
+            let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(cancelPicker));
             
             
-        }
-        else if(indexPath == IndexPath(row: 0,section: 1))
-        {
-            toolbar.setItems([cancelButton,spaceButton,datedoneButton], animated: false)
-            cell.valueLabel.tintColor = .clear
-            cell.valueLabel.inputView = datePicker
-            cell.valueLabel.inputAccessoryView = toolbar
-            cell.valueLabel.placeholder = "Select date"
-        
-            if #available(iOS 13.4, *) {
-                datePicker.preferredDatePickerStyle = .wheels
-                datePicker.datePickerMode = .date
-                datePicker.maximumDate = Date()
-            } else {
-                // Fallback on earlier versions
+            let section = indexPath.section
+            let cell : AddPetTableViewCell = tableView.dequeueReusableCell(withIdentifier: "addcell", for: indexPath) as! AddPetTableViewCell
+            
+            if(indexPath.section
+             == 0)
+            {
+                cell.valueLabel.placeholder = "Pet's Name"
             }
+            else if(indexPath.section == 1) //Pick animal
+            {
+                toolbar.setItems([cancelButton,spaceButton,doneButton], animated: false)
+                cell.accessoryType = .disclosureIndicator
+                cell.valueLabel.tintColor = .clear
+                cell.valueLabel.inputView = animalPicker
+                cell.valueLabel.inputAccessoryView = toolbar
+                cell.valueLabel.placeholder = "Choose Animal Type"
+            }
+            else if(indexPath.section == 2) //Pick sex
+            {
+                toolbar.setItems([cancelButton,spaceButton,doneButton], animated: false)
+                cell.accessoryType = .disclosureIndicator
+                cell.valueLabel.tintColor = .clear
+                cell.valueLabel.inputView = sexPicker
+                cell.valueLabel.inputAccessoryView = toolbar
+                cell.valueLabel.placeholder = "Pet's Gender"
+                
+                
+            }
+            else if(indexPath.section == 3)
+            {
+                toolbar.setItems([cancelButton,spaceButton,datedoneButton], animated: false)
+                cell.valueLabel.tintColor = .clear
+                cell.valueLabel.inputView = datePicker
+                cell.valueLabel.inputAccessoryView = toolbar
+                cell.valueLabel.placeholder = "Select date"
             
-        }
-        else if(indexPath == IndexPath(row: 1, section: 1))
-        {
-            cell.valueLabel.isEnabled = false
-            cell.valueLabel.placeholder = ""
-            
-        }
-        else if(indexPath == IndexPath(row:2, section: 1))
-        {
-            cell.valueLabel.placeholder = "Pet's breed"
-        }
-        else if(indexPath == IndexPath(row: 0, section: 0))
-        {
-            cell.valueLabel.placeholder = "Pet's name"
+                if #available(iOS 13.4, *) {
+                    datePicker.preferredDatePickerStyle = .wheels
+                    datePicker.datePickerMode = .date
+                    datePicker.maximumDate = Date()
+                } else {
+                    // Fallback on earlier versions
+                }
+                
+            }
+            else if(indexPath.section == 4)
+            {
+                cell.valueLabel.placeholder = "Pet's Breed"
+            }
+            else if(indexPath.section == 5)
+            {
+                cell.valueLabel.placeholder = "Pet's Color"
+            }
+            tableViewHeightConstraint.constant = tableView1.contentSize.height
+            return cell
         }
         else
         {
-            cell.valueLabel.placeholder = "Optional"
+            let section = indexPath.section
+            let cell : AddPetTableViewCell = tableView.dequeueReusableCell(withIdentifier: "addcell", for: indexPath) as! AddPetTableViewCell
+            
+            if(indexPath.section
+             == 0)
+            {
+                cell.valueLabel.placeholder = "Pet's ID Number"
+            }
+            else if(indexPath.section == 1) //Pick animal
+            {
+                cell.valueLabel.placeholder = "Pet’s Born Name"
+            }
+            else if(indexPath.section == 2) //Pick sex
+            {
+                cell.valueLabel.placeholder = "Breeder's Name"
+            }
+            else if(indexPath.section == 3)
+            {
+                cell.valueLabel.placeholder = "Breeder's Address"
+            }
+            tableViewHeightConstraint2.constant = tableView2.contentSize.height
+            return cell
         }
-        return cell
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 3
+        if(tableView == tableView1)
+        {
+        return section1.count
+        }
+        else
+        {return section2.count}
     }
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return nil
@@ -554,5 +671,16 @@ extension AddPetViewController: UITableViewDelegate,UITableViewDataSource
     func tableView(_ tableView: UITableView, didEndEditingRowAt indexPath: IndexPath?) {
         let section = indexPath?.section
         
+    }
+}
+extension UIViewController {
+    func hideKeyboardWhenTappedAround() {
+        let tapGesture = UITapGestureRecognizer(target: self,
+                         action: #selector(hideKeyboard))
+        view.addGestureRecognizer(tapGesture)
+    }
+
+    @objc func hideKeyboard() {
+        view.endEditing(true)
     }
 }

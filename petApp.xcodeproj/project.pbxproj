@@ -7,31 +7,58 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		71089DEE778878DF72C48E30 /* Pods_petApp_petAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC80A92341CDECE01AB2E64F /* Pods_petApp_petAppUITests.framework */; };
+		7BFAFE99F21D98D565D7D6AA /* Pods_petAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0570A5B6B102A4CF7557C380 /* Pods_petAppTests.framework */; };
+		A0A89007A4F577A704FA7D28 /* Pods_petApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3E5485A567BE6DDF6C814F0 /* Pods_petApp.framework */; };
+		B112181F25C00954008FD1DD /* HomeKecilTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B112181E25C00954008FD1DD /* HomeKecilTableViewCell.swift */; };
+		B112182725C00966008FD1DD /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B112182625C00966008FD1DD /* HomeCollectionViewCell.swift */; };
+		B133565725C05FBC002B24D9 /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B133565625C05FBC002B24D9 /* ShadowView.swift */; };
+		B147590525B9888B0003417F /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B147590425B9888B0003417F /* TabBarController.swift */; };
+		B147590A25B992BF0003417F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B147590925B992BF0003417F /* HomeViewController.swift */; };
+		B147855D25B31A1C003F53F0 /* GeneralListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B147855C25B31A1C003F53F0 /* GeneralListViewController.swift */; };
+		B147856625B31A50003F53F0 /* GeneralListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B147856525B31A50003F53F0 /* GeneralListTableViewCell.swift */; };
+		B15BD98D25BC013E0050AB2F /* HalfModalInteractiveTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15BD98825BC013E0050AB2F /* HalfModalInteractiveTransition.swift */; };
+		B15BD98E25BC013E0050AB2F /* HalfModalTransitionAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15BD98925BC013E0050AB2F /* HalfModalTransitionAnimator.swift */; };
+		B15BD98F25BC013E0050AB2F /* HalfModalTransitioningDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15BD98A25BC013E0050AB2F /* HalfModalTransitioningDelegate.swift */; };
+		B15BD99025BC013E0050AB2F /* HalfModalPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15BD98C25BC013E0050AB2F /* HalfModalPresentationController.swift */; };
+		B15BD99625BC01CC0050AB2F /* AppNavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15BD99425BC01CC0050AB2F /* AppNavController.swift */; };
+		B15BD99725BC01CC0050AB2F /* ModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15BD99525BC01CC0050AB2F /* ModalViewController.swift */; };
+		B15BD99C25BC04620050AB2F /* ModalCornerRadius.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15BD99B25BC04620050AB2F /* ModalCornerRadius.swift */; };
 		B16A879825A9B50500F3DA77 /* DetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16A879725A9B50500F3DA77 /* DetailsTableViewCell.swift */; };
+		B17A81F925C154830030E5DC /* AddCalendarCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17A81F825C154830030E5DC /* AddCalendarCollectionViewCell.swift */; };
+		B17A820525C155B80030E5DC /* AddCalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17A820425C155B80030E5DC /* AddCalendarViewController.swift */; };
 		B17B2BCE2595C6EF00ED759A /* cornerRadius.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17B2BCD2595C6EF00ED759A /* cornerRadius.swift */; };
 		B17B2BD32595DA6F00ED759A /* AddPetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17B2BD22595DA6F00ED759A /* AddPetTableViewCell.swift */; };
-		B1B8731225A9973D00CA003C /* Calendar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1B8731125A9973D00CA003C /* Calendar.storyboard */; };
-		B1B8731725A9974E00CA003C /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1B8731625A9974E00CA003C /* CalendarViewController.swift */; };
+		B1B1D56325C3D9030095A045 /* petApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B1B1D56125C3D9030095A045 /* petApp.xcdatamodeld */; };
 		B1B8731C25A9994300CA003C /* PetDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1B8731B25A9994300CA003C /* PetDetailsViewController.swift */; };
 		B1B8732825A9A7A100CA003C /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1B8732725A9A7A100CA003C /* ImageCollectionViewCell.swift */; };
+		B1BBD17925C6DB02004A3AE5 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BBD17825C6DB02004A3AE5 /* ProfileViewController.swift */; };
+		B1BBD18725C6DB66004A3AE5 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1BBD18625C6DB66004A3AE5 /* Profile.storyboard */; };
+		B1BD390625B04340001E02CE /* AddMedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BD390525B04340001E02CE /* AddMedViewController.swift */; };
+		B1BD390F25B04364001E02CE /* AddMedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BD390E25B04364001E02CE /* AddMedTableViewCell.swift */; };
+		B1BEBBEF25B00D1200E66E96 /* DetailConditionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BEBBEE25B00D1200E66E96 /* DetailConditionViewController.swift */; };
+		B1BEBBFB25B0135F00E66E96 /* ConditionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BEBBFA25B0135F00E66E96 /* ConditionTableViewCell.swift */; };
 		B1C7A53125947DCE00761829 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C7A53025947DCE00761829 /* AppDelegate.swift */; };
 		B1C7A53325947DCE00761829 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C7A53225947DCE00761829 /* SceneDelegate.swift */; };
 		B1C7A53525947DCE00761829 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C7A53425947DCE00761829 /* ViewController.swift */; };
 		B1C7A53825947DCE00761829 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1C7A53625947DCE00761829 /* Main.storyboard */; };
-		B1C7A53B25947DCE00761829 /* petApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B1C7A53925947DCE00761829 /* petApp.xcdatamodeld */; };
 		B1C7A53D25947DCF00761829 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B1C7A53C25947DCF00761829 /* Assets.xcassets */; };
 		B1C7A54025947DCF00761829 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1C7A53E25947DCF00761829 /* LaunchScreen.storyboard */; };
 		B1C7A54B25947DCF00761829 /* petAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C7A54A25947DCF00761829 /* petAppTests.swift */; };
 		B1C7A55625947DCF00761829 /* petAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C7A55525947DCF00761829 /* petAppUITests.swift */; };
 		B1C7A5762594808400761829 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1C7A5752594808400761829 /* Home.storyboard */; };
 		B1C7A5832594850200761829 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C7A5822594850200761829 /* HomeTableViewCell.swift */; };
-		B1C7A58B2594857700761829 /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C7A58A2594857700761829 /* HomeTableViewController.swift */; };
 		B1C7A599259496D100761829 /* AddPetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C7A597259496D100761829 /* AddPetViewController.swift */; };
 		B1C932AD259731E9002D3866 /* circleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C932AC259731E9002D3866 /* circleButton.swift */; };
+		B1D18A0525B7F0870052CFB1 /* ConditionDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D18A0425B7F0870052CFB1 /* ConditionDetailViewController.swift */; };
+		B1D18A0E25B7F0DF0052CFB1 /* DetailConditionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D18A0D25B7F0DF0052CFB1 /* DetailConditionTableViewCell.swift */; };
 		B1D9A96825AD8E5500E30143 /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D9A96725AD8E5500E30143 /* EditViewController.swift */; };
 		B1D9A97125AD962B00E30143 /* EditCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D9A97025AD962B00E30143 /* EditCollectionViewCell.swift */; };
 		B1D9A97925AD963900E30143 /* EditTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D9A97825AD963900E30143 /* EditTableViewCell.swift */; };
 		B1DFB12225987A180074CB70 /* AddImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1DFB12125987A180074CB70 /* AddImageCollectionViewCell.swift */; };
+		B1E548B025BD5560005B600E /* VaccineDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E548AF25BD5560005B600E /* VaccineDetailViewController.swift */; };
+		B1EEF4B925B5671B003EE6B1 /* AddVaccineTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EEF4B825B5671B003EE6B1 /* AddVaccineTableViewCell.swift */; };
+		B1EEF4C125B5672B003EE6B1 /* AddVacViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EEF4C025B5672B003EE6B1 /* AddVacViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,19 +79,44 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0570A5B6B102A4CF7557C380 /* Pods_petAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_petAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4B35C72718A7BF91601C6D61 /* Pods-petApp-petAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-petApp-petAppUITests.debug.xcconfig"; path = "Target Support Files/Pods-petApp-petAppUITests/Pods-petApp-petAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		773DFFEB09D9E4A69A00EFED /* Pods-petAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-petAppTests.debug.xcconfig"; path = "Target Support Files/Pods-petAppTests/Pods-petAppTests.debug.xcconfig"; sourceTree = "<group>"; };
+		A6F9F40C99BB48F0793B2BA5 /* Pods-petApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-petApp.release.xcconfig"; path = "Target Support Files/Pods-petApp/Pods-petApp.release.xcconfig"; sourceTree = "<group>"; };
+		AF42E6E9B065BF8D2FEE0368 /* Pods-petApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-petApp.debug.xcconfig"; path = "Target Support Files/Pods-petApp/Pods-petApp.debug.xcconfig"; sourceTree = "<group>"; };
+		B112181E25C00954008FD1DD /* HomeKecilTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeKecilTableViewCell.swift; sourceTree = "<group>"; };
+		B112182625C00966008FD1DD /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
+		B133565625C05FBC002B24D9 /* ShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
+		B147590425B9888B0003417F /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		B147590925B992BF0003417F /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		B147855C25B31A1C003F53F0 /* GeneralListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralListViewController.swift; sourceTree = "<group>"; };
+		B147856525B31A50003F53F0 /* GeneralListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralListTableViewCell.swift; sourceTree = "<group>"; };
+		B15BD98825BC013E0050AB2F /* HalfModalInteractiveTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HalfModalInteractiveTransition.swift; sourceTree = "<group>"; };
+		B15BD98925BC013E0050AB2F /* HalfModalTransitionAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HalfModalTransitionAnimator.swift; sourceTree = "<group>"; };
+		B15BD98A25BC013E0050AB2F /* HalfModalTransitioningDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HalfModalTransitioningDelegate.swift; sourceTree = "<group>"; };
+		B15BD98C25BC013E0050AB2F /* HalfModalPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HalfModalPresentationController.swift; sourceTree = "<group>"; };
+		B15BD99425BC01CC0050AB2F /* AppNavController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppNavController.swift; sourceTree = "<group>"; };
+		B15BD99525BC01CC0050AB2F /* ModalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalViewController.swift; sourceTree = "<group>"; };
+		B15BD99B25BC04620050AB2F /* ModalCornerRadius.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalCornerRadius.swift; sourceTree = "<group>"; };
 		B16A879725A9B50500F3DA77 /* DetailsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsTableViewCell.swift; sourceTree = "<group>"; };
+		B17A81F825C154830030E5DC /* AddCalendarCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCalendarCollectionViewCell.swift; sourceTree = "<group>"; };
+		B17A820425C155B80030E5DC /* AddCalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCalendarViewController.swift; sourceTree = "<group>"; };
 		B17B2BCD2595C6EF00ED759A /* cornerRadius.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cornerRadius.swift; sourceTree = "<group>"; };
 		B17B2BD22595DA6F00ED759A /* AddPetTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPetTableViewCell.swift; sourceTree = "<group>"; };
-		B1B8731125A9973D00CA003C /* Calendar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Calendar.storyboard; sourceTree = "<group>"; };
-		B1B8731625A9974E00CA003C /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
+		B1B1D56225C3D9030095A045 /* petApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = petApp.xcdatamodel; sourceTree = "<group>"; };
 		B1B8731B25A9994300CA003C /* PetDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetDetailsViewController.swift; sourceTree = "<group>"; };
 		B1B8732725A9A7A100CA003C /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
+		B1BBD17825C6DB02004A3AE5 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		B1BBD18625C6DB66004A3AE5 /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		B1BD390525B04340001E02CE /* AddMedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMedViewController.swift; sourceTree = "<group>"; };
+		B1BD390E25B04364001E02CE /* AddMedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMedTableViewCell.swift; sourceTree = "<group>"; };
+		B1BEBBEE25B00D1200E66E96 /* DetailConditionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailConditionViewController.swift; sourceTree = "<group>"; };
+		B1BEBBFA25B0135F00E66E96 /* ConditionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConditionTableViewCell.swift; sourceTree = "<group>"; };
 		B1C7A52D25947DCE00761829 /* petApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = petApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1C7A53025947DCE00761829 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B1C7A53225947DCE00761829 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		B1C7A53425947DCE00761829 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		B1C7A53725947DCE00761829 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		B1C7A53A25947DCE00761829 /* petApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = petApp.xcdatamodel; sourceTree = "<group>"; };
 		B1C7A53C25947DCF00761829 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B1C7A53F25947DCF00761829 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B1C7A54125947DCF00761829 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -76,13 +128,21 @@
 		B1C7A55725947DCF00761829 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B1C7A5752594808400761829 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		B1C7A5822594850200761829 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
-		B1C7A58A2594857700761829 /* HomeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewController.swift; sourceTree = "<group>"; };
 		B1C7A597259496D100761829 /* AddPetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPetViewController.swift; sourceTree = "<group>"; };
 		B1C932AC259731E9002D3866 /* circleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = circleButton.swift; sourceTree = "<group>"; };
+		B1D18A0425B7F0870052CFB1 /* ConditionDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConditionDetailViewController.swift; sourceTree = "<group>"; };
+		B1D18A0D25B7F0DF0052CFB1 /* DetailConditionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailConditionTableViewCell.swift; sourceTree = "<group>"; };
 		B1D9A96725AD8E5500E30143 /* EditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
 		B1D9A97025AD962B00E30143 /* EditCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCollectionViewCell.swift; sourceTree = "<group>"; };
 		B1D9A97825AD963900E30143 /* EditTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTableViewCell.swift; sourceTree = "<group>"; };
 		B1DFB12125987A180074CB70 /* AddImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddImageCollectionViewCell.swift; sourceTree = "<group>"; };
+		B1E548AF25BD5560005B600E /* VaccineDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaccineDetailViewController.swift; sourceTree = "<group>"; };
+		B1EEF4B825B5671B003EE6B1 /* AddVaccineTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddVaccineTableViewCell.swift; sourceTree = "<group>"; };
+		B1EEF4C025B5672B003EE6B1 /* AddVacViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddVacViewController.swift; sourceTree = "<group>"; };
+		B3E5485A567BE6DDF6C814F0 /* Pods_petApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_petApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B9D4B0BBF66D653A0A0470CA /* Pods-petApp-petAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-petApp-petAppUITests.release.xcconfig"; path = "Target Support Files/Pods-petApp-petAppUITests/Pods-petApp-petAppUITests.release.xcconfig"; sourceTree = "<group>"; };
+		BAE0EE8A066EF4C5FC5F0C0E /* Pods-petAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-petAppTests.release.xcconfig"; path = "Target Support Files/Pods-petAppTests/Pods-petAppTests.release.xcconfig"; sourceTree = "<group>"; };
+		FC80A92341CDECE01AB2E64F /* Pods_petApp_petAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_petApp_petAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +150,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0A89007A4F577A704FA7D28 /* Pods_petApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,6 +158,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7BFAFE99F21D98D565D7D6AA /* Pods_petAppTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -104,16 +166,130 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				71089DEE778878DF72C48E30 /* Pods_petApp_petAppUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4561330FDB6083A14B32814C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B3E5485A567BE6DDF6C814F0 /* Pods_petApp.framework */,
+				FC80A92341CDECE01AB2E64F /* Pods_petApp_petAppUITests.framework */,
+				0570A5B6B102A4CF7557C380 /* Pods_petAppTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5D46EFBA9AC026825C73062F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AF42E6E9B065BF8D2FEE0368 /* Pods-petApp.debug.xcconfig */,
+				A6F9F40C99BB48F0793B2BA5 /* Pods-petApp.release.xcconfig */,
+				4B35C72718A7BF91601C6D61 /* Pods-petApp-petAppUITests.debug.xcconfig */,
+				B9D4B0BBF66D653A0A0470CA /* Pods-petApp-petAppUITests.release.xcconfig */,
+				773DFFEB09D9E4A69A00EFED /* Pods-petAppTests.debug.xcconfig */,
+				BAE0EE8A066EF4C5FC5F0C0E /* Pods-petAppTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		B147855B25B31A06003F53F0 /* GeneralList */ = {
+			isa = PBXGroup;
+			children = (
+				B147855C25B31A1C003F53F0 /* GeneralListViewController.swift */,
+			);
+			path = GeneralList;
+			sourceTree = "<group>";
+		};
+		B147856425B31A3E003F53F0 /* General List */ = {
+			isa = PBXGroup;
+			children = (
+				B147856525B31A50003F53F0 /* GeneralListTableViewCell.swift */,
+			);
+			path = "General List";
+			sourceTree = "<group>";
+		};
+		B15BD98725BC013E0050AB2F /* Transitioning */ = {
+			isa = PBXGroup;
+			children = (
+				B15BD98825BC013E0050AB2F /* HalfModalInteractiveTransition.swift */,
+				B15BD98925BC013E0050AB2F /* HalfModalTransitionAnimator.swift */,
+				B15BD98A25BC013E0050AB2F /* HalfModalTransitioningDelegate.swift */,
+			);
+			path = Transitioning;
+			sourceTree = "<group>";
+		};
+		B15BD98B25BC013E0050AB2F /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				B15BD98C25BC013E0050AB2F /* HalfModalPresentationController.swift */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		B17A81F725C154660030E5DC /* AddCalendar */ = {
+			isa = PBXGroup;
+			children = (
+				B17A81F825C154830030E5DC /* AddCalendarCollectionViewCell.swift */,
+			);
+			path = AddCalendar;
+			sourceTree = "<group>";
+		};
+		B17A820025C1553F0030E5DC /* Tabbar */ = {
+			isa = PBXGroup;
+			children = (
+				B17A820C25C155C30030E5DC /* View */,
+				B17A820125C155600030E5DC /* Model */,
+				B17A820325C1557B0030E5DC /* Controller */,
+				B17A820225C1556B0030E5DC /* Modal */,
+			);
+			path = Tabbar;
+			sourceTree = "<group>";
+		};
+		B17A820125C155600030E5DC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B17A81F725C154660030E5DC /* AddCalendar */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B17A820225C1556B0030E5DC /* Modal */ = {
+			isa = PBXGroup;
+			children = (
+				B15BD99425BC01CC0050AB2F /* AppNavController.swift */,
+				B15BD99525BC01CC0050AB2F /* ModalViewController.swift */,
+				B15BD99B25BC04620050AB2F /* ModalCornerRadius.swift */,
+				B15BD98B25BC013E0050AB2F /* Presentation */,
+				B15BD98725BC013E0050AB2F /* Transitioning */,
+			);
+			path = Modal;
+			sourceTree = "<group>";
+		};
+		B17A820325C1557B0030E5DC /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B147590425B9888B0003417F /* TabBarController.swift */,
+				B17A820425C155B80030E5DC /* AddCalendarViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		B17A820C25C155C30030E5DC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B1C7A53625947DCE00761829 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		B1B8732025A9A73D00CA003C /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				B1C7A58A2594857700761829 /* HomeTableViewController.swift */,
+				B147590925B992BF0003417F /* HomeViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -138,6 +314,8 @@
 			isa = PBXGroup;
 			children = (
 				B1C7A5822594850200761829 /* HomeTableViewCell.swift */,
+				B112181E25C00954008FD1DD /* HomeKecilTableViewCell.swift */,
+				B112182625C00966008FD1DD /* HomeCollectionViewCell.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -160,6 +338,39 @@
 			path = Details;
 			sourceTree = "<group>";
 		};
+		B1BD390425B0432C001E02CE /* AddMed */ = {
+			isa = PBXGroup;
+			children = (
+				B1BD390525B04340001E02CE /* AddMedViewController.swift */,
+			);
+			path = AddMed;
+			sourceTree = "<group>";
+		};
+		B1BD390D25B04346001E02CE /* AddMed */ = {
+			isa = PBXGroup;
+			children = (
+				B1BD390E25B04364001E02CE /* AddMedTableViewCell.swift */,
+			);
+			path = AddMed;
+			sourceTree = "<group>";
+		};
+		B1BEBBED25B00CF200E66E96 /* Detail Condition */ = {
+			isa = PBXGroup;
+			children = (
+				B1BEBBEE25B00D1200E66E96 /* DetailConditionViewController.swift */,
+			);
+			path = "Detail Condition";
+			sourceTree = "<group>";
+		};
+		B1BEBBF625B012E500E66E96 /* DetailCondition */ = {
+			isa = PBXGroup;
+			children = (
+				B1C932AC259731E9002D3866 /* circleButton.swift */,
+				B1BEBBFA25B0135F00E66E96 /* ConditionTableViewCell.swift */,
+			);
+			path = DetailCondition;
+			sourceTree = "<group>";
+		};
 		B1C7A52425947DCE00761829 = {
 			isa = PBXGroup;
 			children = (
@@ -167,6 +378,8 @@
 				B1C7A54925947DCF00761829 /* petAppTests */,
 				B1C7A55425947DCF00761829 /* petAppUITests */,
 				B1C7A52E25947DCE00761829 /* Products */,
+				5D46EFBA9AC026825C73062F /* Pods */,
+				4561330FDB6083A14B32814C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -183,17 +396,18 @@
 		B1C7A52F25947DCE00761829 /* petApp */ = {
 			isa = PBXGroup;
 			children = (
+				B1B1D56125C3D9030095A045 /* petApp.xcdatamodeld */,
+				B17A820025C1553F0030E5DC /* Tabbar */,
 				B1C7A56825947F9200761829 /* Page3 */,
 				B1C7A56725947F8900761829 /* Page2 */,
 				B1C7A56625947F7F00761829 /* Page1 */,
 				B1C7A53025947DCE00761829 /* AppDelegate.swift */,
 				B1C7A53225947DCE00761829 /* SceneDelegate.swift */,
 				B1C7A53425947DCE00761829 /* ViewController.swift */,
-				B1C7A53625947DCE00761829 /* Main.storyboard */,
 				B1C7A53C25947DCF00761829 /* Assets.xcassets */,
 				B1C7A53E25947DCF00761829 /* LaunchScreen.storyboard */,
 				B1C7A54125947DCF00761829 /* Info.plist */,
-				B1C7A53925947DCE00761829 /* petApp.xcdatamodeld */,
+				B133565625C05FBC002B24D9 /* ShadowView.swift */,
 			);
 			path = petApp;
 			sourceTree = "<group>";
@@ -249,12 +463,16 @@
 		B1C7A56C2594804800761829 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				B1D18A0C25B7F0920052CFB1 /* ConditionDetail */,
+				B1EEF4B725B5670B003EE6B1 /* AddVac */,
+				B147856425B31A3E003F53F0 /* General List */,
+				B1BD390D25B04346001E02CE /* AddMed */,
+				B1BEBBF625B012E500E66E96 /* DetailCondition */,
 				B1D9A96F25AD961500E30143 /* Edit */,
 				B1B8732525A9A76900CA003C /* Details */,
 				B1B8732425A9A76500CA003C /* Add */,
 				B1B8732325A9A76100CA003C /* Home */,
 				B17B2BCD2595C6EF00ED759A /* cornerRadius.swift */,
-				B1C932AC259731E9002D3866 /* circleButton.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -270,6 +488,12 @@
 		B1C7A56E2594805000761829 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				B1E548AB25BD54D3005B600E /* VaccineDetail */,
+				B1D18A0325B7F0670052CFB1 /* ConditionDetail */,
+				B1EEF4B625B56704003EE6B1 /* AddVacc */,
+				B147855B25B31A06003F53F0 /* GeneralList */,
+				B1BD390425B0432C001E02CE /* AddMed */,
+				B1BEBBED25B00CF200E66E96 /* Detail Condition */,
 				B1D9A96625AD8E4400E30143 /* Edit */,
 				B1B8732225A9A74600CA003C /* Details */,
 				B1B8732125A9A74200CA003C /* Add */,
@@ -288,7 +512,7 @@
 		B1C7A5702594805800761829 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				B1B8731125A9973D00CA003C /* Calendar.storyboard */,
+				B1BBD18625C6DB66004A3AE5 /* Profile.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -296,7 +520,7 @@
 		B1C7A5712594805B00761829 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				B1B8731625A9974E00CA003C /* CalendarViewController.swift */,
+				B1BBD17825C6DB02004A3AE5 /* ProfileViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -322,6 +546,22 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		B1D18A0325B7F0670052CFB1 /* ConditionDetail */ = {
+			isa = PBXGroup;
+			children = (
+				B1D18A0425B7F0870052CFB1 /* ConditionDetailViewController.swift */,
+			);
+			path = ConditionDetail;
+			sourceTree = "<group>";
+		};
+		B1D18A0C25B7F0920052CFB1 /* ConditionDetail */ = {
+			isa = PBXGroup;
+			children = (
+				B1D18A0D25B7F0DF0052CFB1 /* DetailConditionTableViewCell.swift */,
+			);
+			path = ConditionDetail;
+			sourceTree = "<group>";
+		};
 		B1D9A96625AD8E4400E30143 /* Edit */ = {
 			isa = PBXGroup;
 			children = (
@@ -339,6 +579,30 @@
 			path = Edit;
 			sourceTree = "<group>";
 		};
+		B1E548AB25BD54D3005B600E /* VaccineDetail */ = {
+			isa = PBXGroup;
+			children = (
+				B1E548AF25BD5560005B600E /* VaccineDetailViewController.swift */,
+			);
+			path = VaccineDetail;
+			sourceTree = "<group>";
+		};
+		B1EEF4B625B56704003EE6B1 /* AddVacc */ = {
+			isa = PBXGroup;
+			children = (
+				B1EEF4C025B5672B003EE6B1 /* AddVacViewController.swift */,
+			);
+			path = AddVacc;
+			sourceTree = "<group>";
+		};
+		B1EEF4B725B5670B003EE6B1 /* AddVac */ = {
+			isa = PBXGroup;
+			children = (
+				B1EEF4B825B5671B003EE6B1 /* AddVaccineTableViewCell.swift */,
+			);
+			path = AddVac;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -346,9 +610,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B1C7A55A25947DCF00761829 /* Build configuration list for PBXNativeTarget "petApp" */;
 			buildPhases = (
+				A2F803B90EAC5C3F78CB1956 /* [CP] Check Pods Manifest.lock */,
 				B1C7A52925947DCE00761829 /* Sources */,
 				B1C7A52A25947DCE00761829 /* Frameworks */,
 				B1C7A52B25947DCE00761829 /* Resources */,
+				A7BC0CD8B7AFFD5B77EF667F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -363,6 +629,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B1C7A55D25947DCF00761829 /* Build configuration list for PBXNativeTarget "petAppTests" */;
 			buildPhases = (
+				38C61E7B4C37F666786428DD /* [CP] Check Pods Manifest.lock */,
 				B1C7A54225947DCF00761829 /* Sources */,
 				B1C7A54325947DCF00761829 /* Frameworks */,
 				B1C7A54425947DCF00761829 /* Resources */,
@@ -381,9 +648,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B1C7A56025947DCF00761829 /* Build configuration list for PBXNativeTarget "petAppUITests" */;
 			buildPhases = (
+				805172BB32CB9359A6292CA8 /* [CP] Check Pods Manifest.lock */,
 				B1C7A54D25947DCF00761829 /* Sources */,
 				B1C7A54E25947DCF00761829 /* Frameworks */,
 				B1C7A54F25947DCF00761829 /* Resources */,
+				57CB1FBDF9702910B0307F48 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -444,8 +713,8 @@
 			files = (
 				B1C7A5762594808400761829 /* Home.storyboard in Resources */,
 				B1C7A54025947DCF00761829 /* LaunchScreen.storyboard in Resources */,
+				B1BBD18725C6DB66004A3AE5 /* Profile.storyboard in Resources */,
 				B1C7A53D25947DCF00761829 /* Assets.xcassets in Resources */,
-				B1B8731225A9973D00CA003C /* Calendar.storyboard in Resources */,
 				B1C7A53825947DCE00761829 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -466,28 +735,155 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		38C61E7B4C37F666786428DD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-petAppTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		57CB1FBDF9702910B0307F48 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-petApp-petAppUITests/Pods-petApp-petAppUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-petApp-petAppUITests/Pods-petApp-petAppUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-petApp-petAppUITests/Pods-petApp-petAppUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		805172BB32CB9359A6292CA8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-petApp-petAppUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A2F803B90EAC5C3F78CB1956 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-petApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A7BC0CD8B7AFFD5B77EF667F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-petApp/Pods-petApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-petApp/Pods-petApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-petApp/Pods-petApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		B1C7A52925947DCE00761829 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B1B8731725A9974E00CA003C /* CalendarViewController.swift in Sources */,
-				B1C7A58B2594857700761829 /* HomeTableViewController.swift in Sources */,
+				B17A820525C155B80030E5DC /* AddCalendarViewController.swift in Sources */,
 				B1C7A5832594850200761829 /* HomeTableViewCell.swift in Sources */,
+				B1EEF4C125B5672B003EE6B1 /* AddVacViewController.swift in Sources */,
+				B15BD99025BC013E0050AB2F /* HalfModalPresentationController.swift in Sources */,
 				B1B8731C25A9994300CA003C /* PetDetailsViewController.swift in Sources */,
+				B133565725C05FBC002B24D9 /* ShadowView.swift in Sources */,
+				B147590A25B992BF0003417F /* HomeViewController.swift in Sources */,
 				B1C7A53525947DCE00761829 /* ViewController.swift in Sources */,
-				B1C7A53B25947DCE00761829 /* petApp.xcdatamodeld in Sources */,
+				B1BD390625B04340001E02CE /* AddMedViewController.swift in Sources */,
 				B1D9A97125AD962B00E30143 /* EditCollectionViewCell.swift in Sources */,
 				B16A879825A9B50500F3DA77 /* DetailsTableViewCell.swift in Sources */,
+				B1EEF4B925B5671B003EE6B1 /* AddVaccineTableViewCell.swift in Sources */,
 				B1DFB12225987A180074CB70 /* AddImageCollectionViewCell.swift in Sources */,
 				B1D9A96825AD8E5500E30143 /* EditViewController.swift in Sources */,
+				B1B1D56325C3D9030095A045 /* petApp.xcdatamodeld in Sources */,
+				B112182725C00966008FD1DD /* HomeCollectionViewCell.swift in Sources */,
+				B1E548B025BD5560005B600E /* VaccineDetailViewController.swift in Sources */,
+				B15BD99C25BC04620050AB2F /* ModalCornerRadius.swift in Sources */,
+				B15BD98F25BC013E0050AB2F /* HalfModalTransitioningDelegate.swift in Sources */,
+				B15BD99725BC01CC0050AB2F /* ModalViewController.swift in Sources */,
 				B1C7A53125947DCE00761829 /* AppDelegate.swift in Sources */,
+				B17A81F925C154830030E5DC /* AddCalendarCollectionViewCell.swift in Sources */,
+				B147855D25B31A1C003F53F0 /* GeneralListViewController.swift in Sources */,
 				B1C932AD259731E9002D3866 /* circleButton.swift in Sources */,
+				B112181F25C00954008FD1DD /* HomeKecilTableViewCell.swift in Sources */,
+				B1BEBBEF25B00D1200E66E96 /* DetailConditionViewController.swift in Sources */,
+				B1BD390F25B04364001E02CE /* AddMedTableViewCell.swift in Sources */,
+				B1D18A0525B7F0870052CFB1 /* ConditionDetailViewController.swift in Sources */,
+				B1BEBBFB25B0135F00E66E96 /* ConditionTableViewCell.swift in Sources */,
+				B15BD98D25BC013E0050AB2F /* HalfModalInteractiveTransition.swift in Sources */,
 				B1C7A599259496D100761829 /* AddPetViewController.swift in Sources */,
 				B1B8732825A9A7A100CA003C /* ImageCollectionViewCell.swift in Sources */,
 				B17B2BCE2595C6EF00ED759A /* cornerRadius.swift in Sources */,
+				B147590525B9888B0003417F /* TabBarController.swift in Sources */,
 				B1D9A97925AD963900E30143 /* EditTableViewCell.swift in Sources */,
+				B15BD99625BC01CC0050AB2F /* AppNavController.swift in Sources */,
 				B1C7A53325947DCE00761829 /* SceneDelegate.swift in Sources */,
+				B147856625B31A50003F53F0 /* GeneralListTableViewCell.swift in Sources */,
+				B1D18A0E25B7F0DF0052CFB1 /* DetailConditionTableViewCell.swift in Sources */,
+				B1BBD17925C6DB02004A3AE5 /* ProfileViewController.swift in Sources */,
+				B15BD98E25BC013E0050AB2F /* HalfModalTransitionAnimator.swift in Sources */,
 				B17B2BD32595DA6F00ED759A /* AddPetTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -661,6 +1057,7 @@
 		};
 		B1C7A55B25947DCF00761829 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AF42E6E9B065BF8D2FEE0368 /* Pods-petApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -680,6 +1077,7 @@
 		};
 		B1C7A55C25947DCF00761829 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A6F9F40C99BB48F0793B2BA5 /* Pods-petApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -699,6 +1097,7 @@
 		};
 		B1C7A55E25947DCF00761829 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 773DFFEB09D9E4A69A00EFED /* Pods-petAppTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -721,6 +1120,7 @@
 		};
 		B1C7A55F25947DCF00761829 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BAE0EE8A066EF4C5FC5F0C0E /* Pods-petAppTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -743,6 +1143,7 @@
 		};
 		B1C7A56125947DCF00761829 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4B35C72718A7BF91601C6D61 /* Pods-petApp-petAppUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -763,6 +1164,7 @@
 		};
 		B1C7A56225947DCF00761829 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B9D4B0BBF66D653A0A0470CA /* Pods-petApp-petAppUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -823,12 +1225,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		B1C7A53925947DCE00761829 /* petApp.xcdatamodeld */ = {
+		B1B1D56125C3D9030095A045 /* petApp.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				B1C7A53A25947DCE00761829 /* petApp.xcdatamodel */,
+				B1B1D56225C3D9030095A045 /* petApp.xcdatamodel */,
 			);
-			currentVersion = B1C7A53A25947DCE00761829 /* petApp.xcdatamodel */;
+			currentVersion = B1B1D56225C3D9030095A045 /* petApp.xcdatamodel */;
 			path = petApp.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

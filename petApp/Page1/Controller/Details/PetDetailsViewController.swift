@@ -10,21 +10,34 @@ import CoreData
 
 class PetDetailsViewController: UIViewController {
     
+    @IBAction func pageControllerDidTapped(_ sender: Any) {
+        guard let pageControl = sender as? UIPageControl else { return }
+        let selectedPage = pageControl.currentPage
+       
+        pageController.currentPage = selectedPage
+    }
     var selectedID : UUID = UUID()
     var text = ""
-    var selectedPet: [NSManagedObject] = []
+    var selectedPet: [Pets] = []
     var images : [UIImage] = []
     var currPage = 0
     var sections = [[String]]()
     
     @IBAction func editButtonDidTapped(_ sender: Any) {
+        print(selectedID)
         performSegue(withIdentifier: "toEdit", sender: nil)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if(segue.identifier == "toEdit")
         {
-            if let destinationViewController = segue.destination as? EditViewController {
+            let navController = segue.destination as! UINavigationController
+            let editVC = navController.topViewController as! EditViewController
+                    editVC.selectedID = selectedID
+        }
+        if(segue.identifier == "toDetailCondition")
+        {
+            if let destinationViewController = segue.destination as? DetailConditionViewController {
                 destinationViewController.selectedID = selectedID
                 }
         }
@@ -39,10 +52,28 @@ class PetDetailsViewController: UIViewController {
         super.viewDidLoad()
         
         fetch(with: selectedID)
-        self.title = selectedPet.first?.value(forKey: "petName") as! String
+        setNavigationBar()
+        
         setUpTableView()
         setUpCollectionView()
+        NotificationCenter.default.addObserver(self, selector: #selector(reloadTableView), name: NSNotification.Name(rawValue: "load"), object: nil)
+    }
+    
+    func setNavigationBar()
+    {
+        self.title = selectedPet.first?.value(forKey: "petName") as? String
+        self.navigationController?.navigationBar.setValue(true, forKey: "hidesShadow")
+        navigationController?.navigationBar.isTranslucent = false
+        navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.9411764706, green: 0.4039215686, blue: 0.09411764706, alpha: 1)
+        navigationController?.navigationBar.tintColor = .white
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         
+    }
+    @objc func reloadTableView(){
+        fetch(with: selectedID)
+        self.collectionView.reloadData()
+        self.tableView.reloadData()
+        setUpCollectionView()
     }
     func setUpTableView()
     {
@@ -174,12 +205,11 @@ class PetDetailsViewController: UIViewController {
         
         let managedContext =
             appDelegate!.persistentContainer.viewContext
-            let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Pets")
+            let fetchRequest = NSFetchRequest<Pets>(entityName: "Pets")
             fetchRequest.predicate = NSPredicate(format: "petID == %@", identifier as CVarArg)
             fetchRequest.fetchLimit = 1
         do {
             selectedPet = try managedContext.fetch(fetchRequest)
-            
         } catch let error as NSError {
             print("Could not fetch. \(error), \(error.userInfo)")
         }
@@ -227,6 +257,11 @@ extension PetDetailsViewController: UITableViewDelegate,UITableViewDataSource
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return sections[section].count
     }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if(indexPath == IndexPath(row: 0, section: 2)){
+        self.performSegue(withIdentifier: "toDetailCondition", sender: nil)
+        }
+    }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell : DetailsTableViewCell = tableView.dequeueReusableCell(withIdentifier: "detailscell", for: indexPath) as! DetailsTableViewCell
@@ -238,7 +273,7 @@ extension PetDetailsViewController: UITableViewDelegate,UITableViewDataSource
             let formatter = DateFormatter()
             formatter.dateFormat = "dd/MM/yyyy"
             var DobString = formatter.string(from: DOB!)
-            print(DobString)
+        
             cell.rightLabel.text = DobString
         }
         else if(indexPath == IndexPath(row: 1, section: 0))
@@ -288,4 +323,5 @@ extension PetDetailsViewController: UITableViewDelegate,UITableViewDataSource
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return nil
     }
+    
 }

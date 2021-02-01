@@ -11,7 +11,7 @@ class circleImage: UIImageView {
 
     override func awakeFromNib() {
 
-           layer.cornerRadius = 52
+           layer.cornerRadius = 15
            layer.masksToBounds = true
        }
 
